@@ -1,0 +1,48 @@
+<div class="panel panel-warning" *ngIf="photo">
+  <div class="panel-heading">
+    <h1>REVIEW THE IMAGE</h1>
+    <h3>The id of the image is {{photo.id}}</h3>
+    <button type="button" class="btn btn-primary" (click)="onBack()">Back</button>
+  </div>
+  <div class="panel-body">
+    <h2>Name of the Image: {{photo.title}}</h2>
+    <img src="{{photo.url}}"/>
+    <h2>Providers Name: {{photo.provider}}</h2>
+    <h2>Reason: {{photo.reason}}</h2>
+    <form #form="ngForm" novalidate (ngSubmit)="deployForm()">
+
+      <div class="form-group">
+
+        <label>Star Rating:</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="1" name="optradio">1</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="2" name="optradio">2</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="3" name="optradio">3</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="4" name="optradio">4</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="5" name="optradio">5</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="6" name="optradio">6</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="7" name="optradio">7</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="8" name="optradio">8</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="9" name="optradio">9</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]="photo.starRating" value="10" name="optradio">10</label>
+      </div>
+
+
+
+      <div class="form-group">
+          <label for="provide">Providers Name: </label>
+          <input type="text"
+                 name="provide"
+                 class="form-control"
+                 [(ngModel)]="photo.provider">
+      </div>
+      <div class="form-group">
+          <label for="reason">Reason: </label>
+          <input type="text"
+                 name="reason"
+                 class="form-control"
+                 [(ngModel)]="photo.reason">
+      </div>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

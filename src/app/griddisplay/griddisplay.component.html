@@ -1,0 +1,25 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h1><b>FLICKR IMAGE REVIEWING</b></h1>
+    <h3>Please review the images displayed below</h3>
+        <div class="search">
+          <button class="btn btn-success" (click)="show()">Get Images</button>
+        </div>
+  </div>
+  <div class="panel-body">
+      <mat-grid-list cols="6" rowHeight="1:1" >
+          <mat-grid-tile *ngFor="let photo of photos">
+            <div class="cards">
+              <mat-card>
+                <a (click)="onClick(photo)">
+                  <img [style.height.px]="imageHeight" md-card-image src={{photo.url}}>
+                </a>
+                <mat-card-subtitle>
+                  <h3 *ngIf="photo.starRating"><b>Star Rating: {{photo.starRating}}</b></h3>
+                </mat-card-subtitle>
+              </mat-card>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+  </div>
+</div>
